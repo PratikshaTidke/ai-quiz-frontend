@@ -75,7 +75,7 @@ function QuizPage() {
     setSubmitted(false);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:8080/api/v1/quiz/generate', form, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/quiz/generate`, form, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setQuizData(response.data);
@@ -102,7 +102,7 @@ function QuizPage() {
           score: correctAnswers,
           totalQuestions: quizData.questions.length
         };
-        await axios.post('http://localhost:8080/api/history/save', payload, {
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/history/save`, payload, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
       } catch (err) {
@@ -202,7 +202,7 @@ function LoginPage({ onLogin }) {
     e.preventDefault();
     setError('');
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/login', formData);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, formData);
       onLogin(response.data.token, formData.username);
       navigate('/quiz');
     } catch (err) {
@@ -232,7 +232,7 @@ function RegisterPage() {
     e.preventDefault();
     setMessage('');
     try {
-      await axios.post('http://localhost:8080/api/auth/register', formData);
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/register`, formData);
       setMessage('Registration successful! Redirecting to login...');
       setTimeout(() => navigate('/login'), 2000);
     } catch (err) {
@@ -262,7 +262,7 @@ function HistoryPage() {
         const fetchHistory = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:8080/api/history', {
+                const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/history`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 setHistory(response.data);
