@@ -1,4 +1,4 @@
-# AI Quiz Generator - Frontend
+# QuizMind-UI
 
 This is the React frontend for the AI Quiz Generator. It provides a responsive user interface for registration, login, interactive quiz-taking, and viewing results.
 
