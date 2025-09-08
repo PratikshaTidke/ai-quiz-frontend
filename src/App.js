@@ -10,7 +10,7 @@ function Navbar({ user, onLogout }) {
   return (
     <nav className="navbar">
       <Link to="/" className="nav-brand">
-        <span role="img" aria-label="brain-emoji">🧠</span> AI Quiz App
+        <span role="img" aria-label="brain-emoji">🧠</span> QuizMind
       </Link>
       <div className="nav-links">
         {user ? (
@@ -127,7 +127,7 @@ function QuizPage() {
   return (
     <div className="container">
       <header className="header">
-        <h1>AI Quiz Generator</h1>
+        <h1>QuizMind</h1>
         <p>Create custom quizzes on any topic in seconds!</p>
       </header>
       <form onSubmit={handleGenerateQuiz} className="quiz-form">
