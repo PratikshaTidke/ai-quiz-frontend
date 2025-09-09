@@ -1,5 +1,5 @@
 # QuizMind-UI
-
+Live Demo:** [https://taza-khabar-ui.vercel.app](https://ai-quiz-frontend-six.vercel.app/)
 This is the React frontend for the AI Quiz Generator. It provides a responsive user interface for registration, login, interactive quiz-taking, and viewing results.
 
 ## Features
